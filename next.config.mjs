@@ -16,6 +16,12 @@ const nextConfig = {
   trailingSlash: true,            // Apache/Hostinger serves /about/ -> /about/index.html
   basePath,
   assetPrefix: basePath || undefined,
+  /**
+   * next/image does NOT prepend basePath to `src` when images are unoptimized,
+   * and files in public/ are not covered by assetPrefix either. Expose the
+   * prefix so lib/assetPath.ts can apply it to public/ assets by hand.
+   */
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
 };
 
 export default nextConfig;

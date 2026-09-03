@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getImageSlot, type ImageSlot, type ImageSlotId } from '@/lib/images';
+import { assetPath } from '@/lib/assetPath';
 
 /**
  * Renders an image slot.
@@ -131,7 +132,7 @@ export default function SiteImage({
         style={{ aspectRatio: image.aspect.replace('/', ' / '), viewTransitionName }}
       >
         <Image
-          src={image.src}
+          src={assetPath(image.src)}
           alt={image.alt}
           fill
           sizes={sizes}

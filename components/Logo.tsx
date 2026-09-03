@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { siteConfig } from '@/lib/siteConfig';
+import { assetPath } from '@/lib/assetPath';
 
 /**
  * The firm's own logo.
@@ -29,7 +30,7 @@ export default function Logo({
 
   return (
     <Image
-      src={isLight ? '/logo-reversed.png' : '/logo.png'}
+      src={assetPath(isLight ? '/logo-reversed.png' : '/logo.png')}
       alt={siteConfig.name}
       width={Math.round(height * LOGO_RATIO)}
       height={height}
