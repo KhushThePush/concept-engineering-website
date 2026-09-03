@@ -8,10 +8,10 @@ export const siteConfig = {
   name: 'Concept Engineering LLC',
   shortName: 'Concept Engineering',
   principal: 'Ali Amin, PE',
-  phone: '425-650-4245',
+  phone: '425-463-7961',
   /** E.164 form, for the tel: href. */
-  phoneHref: '+14256504245',
-  email: 'Ali@vantage-builder.com',
+  phoneHref: '+14254637961',
+  email: 'conceptenginnering33@gmail.com',
   city: 'Kirkland',
   state: 'WA',
   region: 'Puget Sound',

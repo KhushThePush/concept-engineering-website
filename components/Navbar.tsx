@@ -76,7 +76,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-paper">
       <div className="shell flex h-[72px] items-center justify-between gap-6">
         <Link href="/" aria-label={`${siteConfig.name} — home`} className="py-2">
-          <Logo variant="dark" />
+          <Logo variant="dark" height={46} />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -132,7 +132,7 @@ export default function Navbar() {
           className="on-dark fixed inset-0 z-50 flex flex-col bg-ink-900 lg:hidden"
         >
           <div className="shell flex h-[72px] shrink-0 items-center justify-between border-b border-line-dark">
-            <Logo variant="light" />
+            <Logo variant="light" height={42} />
             <button
               type="button"
               onClick={() => {

@@ -29,6 +29,7 @@ export type ImageSlot = {
 export const imageSlots = {
   'home-hero': {
     id: 'home-hero',
+    src: '/photos/structural-elevation.jpg',
     glyph: 'elevation',
     alt: 'Structural framing elevation of a timber and steel residence',
     aspect: '16/9',
@@ -37,8 +38,9 @@ export const imageSlots = {
   },
   'about-hero': {
     id: 'about-hero',
+    src: '/photos/construction-collage.jpg',
     glyph: 'foundation',
-    alt: 'Foundation section drawing showing a stepped footing on sloping ground',
+    alt: 'Four views of construction: shoreline pile driving, a bolted timber-to-steel connection, hillside framing on stepped foundations, and a waterfront frame under construction',
     aspect: '16/9',
     caption: 'Representative image',
     subject: 'Foundation section — stepped footing',
@@ -71,8 +73,9 @@ export const imageSlots = {
   // Project heroes — one per slug in lib/projects.ts
   'project-modern-waterfront-residence-hero': {
     id: 'project-modern-waterfront-residence-hero',
+    src: '/photos/waterfront-residence.jpg',
     glyph: 'elevation',
-    alt: 'Structural frame elevation of a waterfront residence on pile-supported foundations',
+    alt: 'Waterfront residence raised on concrete columns above a rocky shoreline, with an exposed steel frame and full-height glazing',
     aspect: '16/9',
     caption: 'Representative image',
     subject: 'Waterfront residence — structural frame',
@@ -87,16 +90,18 @@ export const imageSlots = {
   },
   'project-light-commercial-building-hero': {
     id: 'project-light-commercial-building-hero',
+    src: '/photos/commercial-building-2.jpg',
     glyph: 'truss',
-    alt: 'Steel frame elevation of a light commercial building with clear-span bays',
+    alt: 'Two-storey commercial building with a dark steel frame, metal cladding and full-height glazing',
     aspect: '16/9',
     caption: 'Representative image',
     subject: 'Light commercial — steel frame',
   },
   'project-multi-level-hillside-residence-hero': {
     id: 'project-multi-level-hillside-residence-hero',
+    src: '/photos/hillside-residence.jpg',
     glyph: 'elevation',
-    alt: 'Elevation of a multi-level hillside residence on stepped retaining foundations',
+    alt: 'Multi-level residence stepping down a forested hillside on tiered concrete retaining walls',
     aspect: '16/9',
     caption: 'Representative image',
     subject: 'Hillside residence — stepped levels',
@@ -121,8 +126,9 @@ export const imageSlots = {
   // Project cards — 3/2, used in the projects grid and the Home preview
   'project-modern-waterfront-residence-card': {
     id: 'project-modern-waterfront-residence-card',
+    src: '/photos/waterfront-residence.jpg',
     glyph: 'elevation',
-    alt: 'Waterfront residence structural frame over pile-supported foundations',
+    alt: 'Waterfront residence raised on concrete columns above a rocky shoreline',
     aspect: '3/2',
     caption: 'Representative image',
     subject: 'Waterfront residence',
@@ -137,16 +143,18 @@ export const imageSlots = {
   },
   'project-light-commercial-building-card': {
     id: 'project-light-commercial-building-card',
+    src: '/photos/commercial-building-2.jpg',
     glyph: 'truss',
-    alt: 'Light commercial steel frame with clear-span bays',
+    alt: 'Two-storey commercial building with a dark steel frame and full-height glazing',
     aspect: '3/2',
     caption: 'Representative image',
     subject: 'Light commercial building',
   },
   'project-multi-level-hillside-residence-card': {
     id: 'project-multi-level-hillside-residence-card',
+    src: '/photos/hillside-residence.jpg',
     glyph: 'elevation',
-    alt: 'Multi-level hillside residence on stepped retaining foundations',
+    alt: 'Multi-level residence stepping down a forested hillside on tiered retaining walls',
     aspect: '3/2',
     caption: 'Representative image',
     subject: 'Hillside residence',

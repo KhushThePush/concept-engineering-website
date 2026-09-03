@@ -1,54 +1,41 @@
+import Image from 'next/image';
 import { siteConfig } from '@/lib/siteConfig';
 
 /**
- * Original wordmark: CONCEPT over ENGINEERING LLC, with a mark derived from a
- * stepped foundation section — a stem carrying two widening footing courses.
- * Three filled bars, so it stays legible at 24px.
+ * The firm's own logo.
  *
- * `dark`  — ink mark and wordmark, for light grounds.
- * `light` — reversed: paper mark and wordmark with a bronze footing course.
+ * Supplied as a JPEG on a white background, which would have shown as a white
+ * box on both the off-white navbar and the dark footer. It is shipped here as
+ * two transparent PNGs cropped to the artwork:
+ *
+ *   /logo.png           the colour lockup, for light grounds
+ *   /logo-reversed.png  the same artwork as a paper-white silhouette, for dark
+ *
+ * Both are 421x186 (2.26:1). Height is set per usage and the width follows.
  */
+const LOGO_RATIO = 421 / 186;
+
 export default function Logo({
   variant = 'dark',
+  height = 40,
   className = '',
 }: {
+  /** The ground it sits on: `dark` = ink art on a light ground. */
   variant?: 'dark' | 'light';
+  height?: number;
   className?: string;
 }) {
   const isLight = variant === 'light';
-  const markBody = isLight ? 'var(--paper)' : 'var(--ink-900)';
-  const markFooting = isLight ? 'var(--bronze-400)' : 'var(--bronze-700)';
 
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg
-        viewBox="0 0 32 32"
-        width="28"
-        height="28"
-        aria-hidden="true"
-        className="shrink-0"
-      >
-        <rect x="13" y="4" width="6" height="11" fill={markBody} />
-        <rect x="7.5" y="16" width="17" height="5" fill={markBody} />
-        <rect x="2" y="22" width="28" height="5" fill={markFooting} />
-      </svg>
-      <span className="flex flex-col leading-none">
-        <span
-          className={`font-display text-[1.0625rem] font-bold uppercase leading-none tracking-[0.06em] ${
-            isLight ? 'text-paper' : 'text-ink-900'
-          }`}
-        >
-          Concept
-        </span>
-        <span
-          className={`mt-[3px] font-display text-[0.6875rem] font-semibold uppercase leading-none tracking-[0.2em] ${
-            isLight ? 'text-paper/70' : 'text-graphite'
-          }`}
-        >
-          Engineering LLC
-        </span>
-      </span>
-      <span className="sr-only">{siteConfig.name}</span>
-    </span>
+    <Image
+      src={isLight ? '/logo-reversed.png' : '/logo.png'}
+      alt={siteConfig.name}
+      width={Math.round(height * LOGO_RATIO)}
+      height={height}
+      priority
+      className={`h-auto w-auto ${className}`}
+      style={{ height, width: 'auto' }}
+    />
   );
 }

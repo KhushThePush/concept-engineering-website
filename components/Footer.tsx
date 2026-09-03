@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="on-dark bg-ink-950 text-paper">
       <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-gutter lg:py-20">
         <div className="lg:col-span-4">
-          <Logo variant="light" />
+          <Logo variant="light" height={54} />
           <p className="measure mt-5 text-small text-paper/70">
             Structural engineering for residential and light commercial projects
             across the {siteConfig.region}, led by {siteConfig.principal}.
