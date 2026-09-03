@@ -19,7 +19,7 @@ export const siteConfig = {
    * PLACEHOLDER — update to the real domain before launch.
    * Read by `metadataBase` in the root layout and by sitemap/robots.
    */
-  siteUrl: 'https://conceptengineeringllc.com',
+  siteUrl: 'https://khushthepush.github.io/concept-engineering-website',
   /** Subject line for the mailto contact form. */
   contactSubject: 'Concept Engineering project inquiry',
   nav: [
