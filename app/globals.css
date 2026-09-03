@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mirrors of the Tailwind token layer, for raw SVG and CSS that cannot
+       reach the Tailwind palette. Keep in sync with tailwind.config.ts. */
+    --ink-950: #0C1620;
+    --ink-900: #12212E;
+    --ink-800: #1B2F40;
+    --ink-700: #2A4359;
+    --paper: #F5F7F8;
+    --mist: #E7ECEF;
+    --graphite: #4E5C68;
+    --line: #C6CFD5;
+    --line-strong: #7E8B96;
+    --bronze-400: #C89257;
+    --bronze-700: #8C5A1E;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink-900);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), 'Arial Narrow', sans-serif;
+    text-wrap: balance;
+  }
+
+  /* Visible focus on the brand bronze. Light grounds use bronze-700 (5.43:1),
+     dark grounds override to bronze-400 (6.01:1) via .on-dark below. */
+  :focus-visible {
+    outline: 2px solid var(--bronze-700);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--bronze-400);
+  }
+
+  ::selection {
+    background-color: var(--bronze-400);
+    color: var(--ink-900);
+  }
+}
+
+@layer components {
+  /* 12-column shell: 1280px max, 24px gutters, 20px mobile page padding. */
+  .shell {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 24px;
+    }
+  }
+
+  /* Section vertical rhythm — one scale, never hand-tuned per section. */
+  .section {
+    padding-block: 96px;
+  }
+
+  @media (min-width: 1024px) {
+    .section {
+      padding-block: 128px;
+    }
+  }
+
+  /* Body measure. */
+  .measure {
+    max-width: 62ch;
+  }
+
+  /* Skip link — visible only when focused. */
+  .skip-link {
+    position: absolute;
+    left: 20px;
+    top: -100px;
+    z-index: 100;
+    background-color: var(--ink-900);
+    color: var(--paper);
+    padding: 12px 20px;
+    border-radius: 2px;
+    transition: top 200ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .skip-link:focus {
+    top: 12px;
+  }
+}
+
+/* All non-essential motion is opt-out. The site must look finished with every
+   transition disabled. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
